@@ -9,7 +9,7 @@
             <div class="left-counter">
                 <div class="column product column">
                     <div class="p1 row">
-                        <button class="name"> {{product.name}} </button>
+                        <button class="product-name"> {{product.name}} </button>
                     </div>
                 </div>
             </div>  <!-- End of "left-counter" -->
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-    name: 'Main',
+    name: 'Store',
     props: {
         msg:String,
     },
@@ -40,12 +40,6 @@ export default {
 </script>
 
 <style >
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-* {
-    font-family: 'VT323', monospace;
-    font-size: 1.5rem;
-}
-
 .row {
     display: flex;
     flex-direction: row;
@@ -57,27 +51,35 @@ export default {
 }
 
 .main-shop {
-    background: rgb(148, 144, 144); 
+    background: grey; 
     min-width: 35rem;
-    max-width: 70rem;
+    max-width: 60rem;
 
     padding: 1rem 0 1rem 0;
     border: rgb(202, 202, 202) 7px solid;
 }
 
+.top-col {
+  padding: 0.5rem;
+}
 .bottom-col {
     width: 100%;
-    background: rgb(82, 67, 67);
+
+    border-top: white solid 1px;
 }
 
 .left-counter {
-    background: rgb(80, 34, 34);
-    width: 100%;
+    width: 66.66%;
+
+    border-right: white 1px solid;
+    padding: 0.5rem; 
 }
 .right-counter {
-    background: rgb(185, 73, 73);
-    width: 50%;
-
+    width: 33.33%;
+    padding: 0.5rem;
 }
 
+.product-name:hover {
+  cursor: pointer;
+}
 </style>

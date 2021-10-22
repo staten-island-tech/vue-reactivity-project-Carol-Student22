@@ -40,12 +40,6 @@ export default {
 </script>
 
 <style >
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-* {
-    font-family: 'VT323', monospace;
-    font-size: 1.5rem;
-}
-
 .row {
     display: flex;
     flex-direction: row;

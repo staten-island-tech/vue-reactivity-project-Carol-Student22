@@ -1,7 +1,7 @@
 <template>
   <section class="container">
       <div class="name-container">
-        <input type="text" placeholder="Game Name" class="input">
+        <input type="text" placeholder="Type. Name. Here. Go." class="input">
         <button class="input-btn">Change Name</button>
       </div>
   </section>
@@ -44,6 +44,7 @@ export default {
 .input-btn:hover {
     box-shadow: none;
     color: grey;
+    cursor: pointer;
   }
 
 </style>

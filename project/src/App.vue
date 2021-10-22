@@ -1,8 +1,8 @@
 <template>
   <div id="app">
+    <userName />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <Main msg="Hi"/>
-    <userName />
   </div>
 </template>
 

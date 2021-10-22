@@ -1,6 +1,7 @@
 <template>
   <section class="container">
       <input type="text" placeholder="Name">
+      
   </section>
 </template>
 

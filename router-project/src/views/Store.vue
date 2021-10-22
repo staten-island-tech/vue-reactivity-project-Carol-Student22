@@ -8,18 +8,19 @@
         <section class="bottom-col row">
             <div class="left-counter">
                 <div class="column product column">
-                    <div class="p1 row">
-                        <button class="product-name"> {{product.name}} </button>
+                    <div class="p1">
+                        <button class="product-name column" v-on:click="generateDescription" v-for="product in products" :key="product.name"> {{product.name}} </button>
                     </div>
                 </div>
             </div>  <!-- End of "left-counter" -->
 
             <div class="right-counter">
-                <button class="product-cost"> {{ product.cost }} </button>
+                <button class="product-cost column" v-for="product in products" :key="product.cost" > {{ product.cost }} coins</button>
             </div>  <!-- End of "right-counter" -->
 
         </section>  <!-- End of "bottom-col column" -->
 
+        
     </section>
 </template>
 
@@ -31,12 +32,25 @@ export default {
     },
     data (){
         return {
-            product: {
-                name:"Bee" , cost: 100,
+            products: [
+                {name:"Bee" , cost: 100, description: "h",},
+                {name:"Butterfly" , cost: 200, description: "g",},
+                {name:"Kitty" , cost: 300, description: "f",},
+                {name:"Hardcore" , cost: 400, description: "d",},
+                {name:"Hmm" , cost: 500, description: "s",},
                 
-            } // End of product
+            ] // End of product
         } // End of return
-    } // End of data
+    }, // End of data
+
+    methods: {
+        generateDescription: function () {
+
+            console.log("done")
+        }
+
+
+    }
 } 
 </script>
 
@@ -83,9 +97,11 @@ export default {
 .product-name {
     border: none;
 }
-.product-name:hover, 
-.product-cost:hover  {
+
+.product-cost:hover,
+.product-name:hover {
   cursor: pointer;
+  
   text-decoration: white 1.5px underline;
 }
 </style>

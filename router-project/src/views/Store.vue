@@ -32,6 +32,7 @@ export default {
     },
     data (){
         return {
+            userBank:{},
             products: [
                 {name:"Bee" , cost: 100, description: "h",},
                 {name:"Butterfly" , cost: 200, description: "g",},
@@ -47,6 +48,8 @@ export default {
         generateDescription: function () {
 
             console.log("done")
+            this.product= [];
+            this.products.push(this.product);
         }
 
 

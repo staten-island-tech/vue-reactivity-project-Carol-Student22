@@ -15,7 +15,7 @@
             </div>  <!-- End of "left-counter" -->
 
             <div class="right-counter">
-                <button class="product-cost column" v-for="product in products" :key="product.cost" > {{ product.cost }} coins</button>
+                <button class="product-cost column" v-for="product in products" :key="product.cost" v-on:click="userBank - products.cost"> {{ product.cost }} coins</button>
             </div>  <!-- End of "right-counter" -->
 
         </section>  <!-- End of "bottom-col column" -->
@@ -34,11 +34,11 @@ export default {
         return {
             userBank:{},
             products: [
-                {name:"Bee" , cost: 100, description: "h",},
-                {name:"Butterfly" , cost: 200, description: "g",},
-                {name:"Kitty" , cost: 300, description: "f",},
-                {name:"Hardcore" , cost: 400, description: "d",},
-                {name:"Hmm" , cost: 500, description: "s",},
+                {name:"Bee" , cost: 100, description: {text:"f", stat:false},},
+                {name:"Butterfly" , cost: 200, description: {text:"f", stat:false},},
+                {name:"Kitty" , cost: 300, description: {text:"f", stat:false}, },
+                {name:"Hardcore" , cost: 400, description: {text:"f", stat:false},},
+                {name:"Hmm" , cost: 500, description: {text:"f", stat:false},},
                 
             ] // End of product
         } // End of return
@@ -50,8 +50,7 @@ export default {
             console.log("done")
             this.product= [];
             this.products.push(this.product);
-        }
-
+        },
 
     }
 } 

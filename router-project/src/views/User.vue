@@ -2,7 +2,7 @@
   <section class="container">
       <div class="name-container">
         <input type="text" placeholder="Type. Name. Here. Go." class="input">
-        <button class="input-btn">Change Name</button>
+        <button class="input-btn" >Change Name</button>
       </div>
   </section>
 </template>
@@ -10,6 +10,11 @@
 <script>
 export default {
     name: "Name",
+    data () {
+      return {
+        userName: {},
+      }
+    }
 }
 </script>
 

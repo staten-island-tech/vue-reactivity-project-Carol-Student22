@@ -1,27 +1,34 @@
 <template>
-    <section class="main-shop column">
+    <section class="container">
+        <section class="main-shop column">
         
-        <section class="top-col row">
-            <div class="header">Welcome Hello Greetings {{msg}} </div>
-        </section>  <!-- End of "top-col column" -->
+            <section class="top-col row">
+                <div class="header">Welcome Hello Greetings {{msg}} </div>
+            </section>  <!-- End of "top-col column" -->
 
-        <section class="bottom-col row">
-            <div class="left-counter">
-                <div class="column product column">
-                    <div class="p1">
-                        <button class="product-name column" v-on:click="generateDescription" v-for="product in products" :key="product.name"> {{product.name}} </button>
+            <section class="bottom-col row">
+                <div class="left-counter">
+                    <div class="column product column">
+                        <div class="p1">
+                            <h1 class="product-name column" v-for="product in products" :key="product.name" @mouseover="changeToDetail(product.detail)"> {{product.name}}  </h1>
+                        </div>
                     </div>
-                </div>
-            </div>  <!-- End of "left-counter" -->
+                </div>  <!-- End of "left-counter" -->
 
-            <div class="right-counter">
-                <button class="product-cost column" v-for="product in products" :key="product.cost" v-on:click="userBank - products.cost"> {{ product.cost }} coins</button>
-            </div>  <!-- End of "right-counter" -->
+                <div class="right-counter">
+                    <button class="product-cost column" v-for="product in products" :key="product.cost" v-on:click="addToCart"> {{ product.cost }} coins</button>
+                </div>  <!-- End of "right-counter" -->
 
-        </section>  <!-- End of "bottom-col column" -->
+            </section>  <!-- End of "bottom-col column" -->  
+        </section>
 
-        
-    </section>
+        <section class="user">
+            <div class="cart">
+                <h1>You Bought {{cart}} Items</h1>
+            </div>
+        </section>
+    </section> <!-- End of "container" -->
+    
 </template>
 
 <script>
@@ -32,25 +39,28 @@ export default {
     },
     data (){
         return {
-            userBank:{},
             products: [
-                {name:"Bee" , cost: 100, description: {text:"f", stat:false},},
-                {name:"Butterfly" , cost: 200, description: {text:"f", stat:false},},
-                {name:"Kitty" , cost: 300, description: {text:"f", stat:false}, },
-                {name:"Hardcore" , cost: 400, description: {text:"f", stat:false},},
-                {name:"Hmm" , cost: 500, description: {text:"f", stat:false},},
+                {name:"Bee" , cost: 100, inStock:true, detail: 'A Honey Jar' },
+                {name:"Butterfly" , cost: 200, inStock:true,detail: 'Flaky Wings' },
+                {name:"Kitty" , cost: 300, inStock:true, detail: 'Mx. Leave Me Alone'},
+                {name:"Hardcore" , cost: 400, inStock:true, detail: 'No Hearts'},
+                {name:"Hmm" , cost: 500, inStock:true, detail: 'Dunno' },
                 
-            ] // End of product
+            ], // End of product
+            cart: 0,
         } // End of return
     }, // End of data
 
     methods: {
-        generateDescription: function () {
-
+        addToCart () {
+            this.cart += 1
             console.log("done")
-            this.product= [];
-            this.products.push(this.product);
         },
+
+        changeToDetail () {
+            this.products.name = this.products.detail
+            console.log("Completed")
+        }
 
     }
 } 
@@ -100,10 +110,15 @@ export default {
     border: none;
 }
 
-.product-cost:hover,
-.product-name:hover {
+.product-name {
+    margin: 0;
+    padding: 1px 0 ;
+    font-weight:100;
+}
+
+.product-cost:hover {
   cursor: pointer;
-  
   text-decoration: white 1.5px underline;
 }
+
 </style>

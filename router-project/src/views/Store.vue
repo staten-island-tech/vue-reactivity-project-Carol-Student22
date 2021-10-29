@@ -10,7 +10,7 @@
                 <div class="left-counter">
                     <div class="column product column">
                         <div class="p1">
-                            <h1 class="product-name column" v-for="product in products" :key="product.name" @mouseover="changeToDetail(product.detail)"> {{product.name}}  </h1>
+                            <h1 class="product-name column" v-for="product in products" :key="product.name"> {{product.name}} - {{product.detail}}  </h1>
                         </div>
                     </div>
                 </div>  <!-- End of "left-counter" -->
@@ -24,7 +24,17 @@
 
         <section class="user">
             <div class="cart">
-                <h1>You Bought {{cart}} Items</h1>
+                <h1 >You Bought {{cart}} Items</h1>
+                <h2>You still have ${{budget}}</h2>
+            </div>
+        </section>
+
+
+        <section class="luck">
+            <div class="luck-container">
+                <h1 class="luck-text">Aye You're in the right Place. This isn't meant to do anything
+                </h1>
+                <button v-on:click="chanceOfLuck()">Roll The Dice</button>
             </div>
         </section>
     </section> <!-- End of "container" -->
@@ -40,14 +50,15 @@ export default {
     data (){
         return {
             products: [
-                {name:"Bee" , cost: 100, inStock:true, detail: 'A Honey Jar' },
-                {name:"Butterfly" , cost: 200, inStock:true,detail: 'Flaky Wings' },
-                {name:"Kitty" , cost: 300, inStock:true, detail: 'Mx. Leave Me Alone'},
-                {name:"Hardcore" , cost: 400, inStock:true, detail: 'No Hearts'},
-                {name:"Hmm" , cost: 500, inStock:true, detail: 'Dunno' },
+                {name:"Bee" , cost: 100, inStock:10, detail: 'A Honey Jar' },
+                {name:"Butterfly" , cost: 200, inStock:10,detail: 'Flaky Wings' },
+                {name:"Kitty" , cost: 300, inStock:0, detail: 'Mx. Leave Me Alone'},
+                {name:"Hardcore" , cost: 400, inStock:5, detail: 'No Hearts'},
+                {name:"Hmm" , cost: 500, inStock:0, detail: 'Dunno' },
                 
             ], // End of product
             cart: 0,
+            budget:1000,
         } // End of return
     }, // End of data
 
@@ -57,9 +68,12 @@ export default {
             console.log("done")
         },
 
-        changeToDetail () {
-            this.products.name = this.products.detail
+        chanceOfLuck () {
             console.log("Completed")
+        },
+        minusQuanity () {
+            console.log("hi")
+
         }
 
     }

@@ -10,7 +10,7 @@
                 <div class="left-counter">
                     <div class="column product column">
                         <div class="" v-for="product in products" :key="product.name"
-                         @mouseover="updateDetail(product.detail) , updateCost(product.cost), updateStock(product.stock)">
+                         v-on:click="updateDetail(product.detail) , updateCost(product.cost), updateStock(product.stock)">
                             <btn class="product-name column"> {{product.name}} </btn>
                         </div>
                     </div>
@@ -120,9 +120,7 @@ export default {
             this.stockDefault = stock
         },
         minusQuanity () {
-
             console.log("hi")
-            
         }
 
     }

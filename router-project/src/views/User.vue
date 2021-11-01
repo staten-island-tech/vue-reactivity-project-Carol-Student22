@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="user-container">
       <div class="name-container">
         <input type="text" placeholder="Type. Name. Here. Go." class="input">
         <button class="input-btn" >Change Name</button>
@@ -20,11 +20,9 @@ export default {
 
 <style scoped>
 
-.container {
+.user-container {
   display: flex;
   justify-content: center;
-
-
 }
 .name-container {
   display: flex;

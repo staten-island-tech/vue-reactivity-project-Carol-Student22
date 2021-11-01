@@ -21,8 +21,8 @@
                         
                         
                         <div >
-                            <h1 class="right-text"> {{detailDefault}}</h1>
-                            <h1 > {{costDefault}} coins</h1>
+                            <h1 class="detail"> {{detailDefault}}</h1>
+                            <h1 class="cost"> {{costDefault}} coins</h1>
                         </div>
                     </div>
                 </div>  <!-- End of "right-counter" -->
@@ -81,19 +81,19 @@ export default {
                     name:'Tumble Weed Candy',
                     detail:"It Ain't Weed. It's Tumble Dried.",
                     cost:25,
-                    stock: 25,
+                    stock: 1,
                 },
                 {
                     name:`Jack O' Late`,
                     detail:"The Pumpkin's Late For It's Carving Date",
-                    cost:25,
-                    stock: 25,
+                    cost:200,
+                    stock: 0,
                 },
                 {
                     name:`Candle`,
                     detail:"It's A Candle. Don't Overthink This.",
-                    cost:25,
-                    stock: 25,
+                    cost:1,
+                    stock: 10,
                 },
             ],
             cart: 0,
@@ -129,7 +129,7 @@ export default {
 } 
 </script>
 
-<style scope>
+<style scoped>
 
 .row {
     display: flex;
@@ -170,6 +170,9 @@ export default {
     width:100%;
     border-top: 1px solid white ;}
 
+.cost {
+    margin-top: 1rem;
+}
 .product-name {
     margin-bottom: 1rem;
 }

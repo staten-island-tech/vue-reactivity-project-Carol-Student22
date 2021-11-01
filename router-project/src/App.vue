@@ -16,8 +16,10 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 * {
     font-family: 'VT323', monospace;
+    font-weight: 100;
     font-size: 1.5rem;
     color: white;
+    margin: 0;
 
     background: black;
 }

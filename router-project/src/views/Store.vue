@@ -22,7 +22,7 @@
                         
                         <div >
                             <h1 class="right-text"> {{detailDefault}}</h1>
-                            <h1 class="right-text"> {{costDefault}} coins</h1>
+                            <h1 > {{costDefault}} coins</h1>
                         </div>
                     </div>
                 </div>  <!-- End of "right-counter" -->
@@ -32,12 +32,11 @@
 
             <section class="user">
                 <div class="cart">
-                    <h1 class="cart-main">You Bought {{cart}} Items</h1>
-                    <h2 class="cart-sub">You still have ${{budget}}</h2>
+                    <h1 class="cart-text cart-main">You Bought {{cart}} Items</h1>
+                    <h2 class="cart-text cart-sub">You still have ${{budget}}</h2>
 
                     <div class="cart-btn row">
-                        <button class="btn-buy"  v-on:click="addToCart"  :disabled="stockDefault = 0">Buy</button>
-                        <button class="btn-buy">Sell</button>
+                        <button class="btn-buy"  v-on:click="addToCart">Buy</button>
                     </div>  <!-- End of "cart-btn" -->
                 </div>
             </section>
@@ -62,16 +61,40 @@ export default {
             products: [
                 {
                     name:'Honey Soaked Caramel',
-                    detail:"Made with the Sweetest Honey. And Caramel.",
+                    detail:"Pre-Charred Sugar Soaked in Bee Vomit",
                     cost:20,
                     stock: 3,
                 },
                 {
-                    name:'Sugar Sweet Candy Piece',
-                    detail:"SUGAR! SUGAR! SUGAR! It's just a candy piece, chill out.",
-                    cost:100,
+                    name:'Sugar Candy Piece',
+                    detail:"SUGAR! SUGAR! SUGAR! No Clue What A Candy Piece Is",
+                    cost:10,
                     stock: 100,
-                }
+                },
+                {
+                    name:'Pastry Disk',
+                    detail:"A disk shaped pastry.",
+                    cost:15,
+                    stock: 8,
+                },
+                {
+                    name:'Tumble Weed Candy',
+                    detail:"It Ain't Weed. It's Tumble Dried.",
+                    cost:25,
+                    stock: 25,
+                },
+                {
+                    name:`Jack O' Late`,
+                    detail:"The Pumpkin's Late For It's Carving Date",
+                    cost:25,
+                    stock: 25,
+                },
+                {
+                    name:`Candle`,
+                    detail:"It's A Candle. Don't Overthink This.",
+                    cost:25,
+                    stock: 25,
+                },
             ],
             cart: 0,
             budget:1000,
@@ -91,7 +114,7 @@ export default {
         },
         updateCost (cost) {
             this.costDefault = cost
-            console.log("Updated Cost")
+            console.log(cost)
         },
         updateStock(stock) {
             this.stockDefault = stock
@@ -107,6 +130,7 @@ export default {
 </script>
 
 <style >
+
 .row {
     display: flex;
     flex-direction: row;
@@ -120,9 +144,8 @@ export default {
 .main-shop {
     min-width: 35rem;
     max-width: 60rem;
-
     border: rgb(202, 202, 202) 3px solid;
-    margin: 2rem 0 0 0 ;
+    margin-bottom: 1rem;
 }
 
 .top-col {
@@ -130,13 +153,11 @@ export default {
 }
 .bottom-col {
     width: 100%;
-
     border-top: white solid 2px;
 }
 
 .left-counter {
     width: 50%;
-
     border-right: gray 2px solid;
     padding: 0.5rem; 
 }
@@ -146,16 +167,19 @@ export default {
 }
 .user {
     width:100%;
-    border-top: 1px solid white ;
-}
-
-.right-text {
-    margin: 0;
-    font-weight: 100;
-}
+    border-top: 1px solid white ;}
 
 .product-name {
     margin-bottom: 1rem;
 }
-
+.btn-buy:hover {
+    cursor: pointer;
+}
+.btn-buy{
+    margin-top: 1rem;
+    padding: 5px 0.5rem;
+}
+.cart-text{
+    margin-top: 0.5rem ;
+}
 </style>

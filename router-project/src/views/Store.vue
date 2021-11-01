@@ -130,10 +130,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  display: flex;
-  justify-content: center;
-}
 .row {
     display: flex;
     flex-direction: row;

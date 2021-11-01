@@ -129,7 +129,7 @@ export default {
 } 
 </script>
 
-<style >
+<style scope>
 
 .row {
     display: flex;
@@ -143,6 +143,7 @@ export default {
 
 .main-shop {
     min-width: 35rem;
+    width: 50rem;
     max-width: 60rem;
     border: rgb(202, 202, 202) 3px solid;
     margin-bottom: 1rem;

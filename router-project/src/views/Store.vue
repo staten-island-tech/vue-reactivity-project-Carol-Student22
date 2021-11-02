@@ -19,7 +19,6 @@
                 <div class="right-counter column" >
                     <div class="stock"> 
                         
-                        
                         <div >
                             <h1 class="detail"> {{detailDefault}}</h1>
                             <h1 class="cost"> {{costDefault}} coins</h1>
@@ -36,7 +35,7 @@
                     <h2 class="cart-text cart-sub">You still have ${{budget}}</h2>
 
                     <div class="cart-btn row">
-                        <button class="btn-buy"  v-on:click="addToCart">Buy</button>
+                        <button :disabled="stockDefault <= 0" :class="{disabled: stockDefault <= 0}" class="btn-buy"  v-on:click="addToCart">Buy</button>
                     </div>  <!-- End of "cart-btn" -->
                 </div>
             </section>
@@ -104,7 +103,7 @@ export default {
     methods: {
         addToCart () {
             this.cart += 1
-            console.log("done")
+            console.log("Added to Cart")
             this.minusQuanity();
         },
 
@@ -120,7 +119,11 @@ export default {
             this.stockDefault = stock
         },
         minusQuanity () {
-            console.log("hi")
+            console.log("Original Stock:" + this.stockDefault)
+            this.stockDefault = this.stockDefault - 1
+            console.log ("New Stock:" + this.stockDefault)
+
+            
         }
 
     }
@@ -178,8 +181,15 @@ export default {
 .btn-buy{
     margin-top: 1rem;
     padding: 5px 0.5rem;
+    border: 1px solid white;
+    color: white;
 }
 .cart-text{
     margin-top: 0.5rem ;
+}
+
+.disabled {
+    border: 1px solid rgb(53, 53, 53);
+    color: grey;
 }
 </style>

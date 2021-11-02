@@ -2,7 +2,7 @@
   <section class="user-container">
       <div class="name-container">
         <input type="text" placeholder="Type. Name. Here. Go." class="input">
-        <button class="input-btn" >Work In Progress...</button>
+        <button class="input-btn">Work In Progress...</button>
       </div>
   </section>
 </template>
@@ -12,9 +12,9 @@ export default {
     name: "Name",
     data () {
       return {
-        userName: {},
+        name: null,
       }
-    }
+    },
 }
 </script>
 

@@ -60,7 +60,7 @@ export default {
             products: [
                 {
                     name:'Honey Soaked Caramel',
-                    detail:"Pre-Charred Sugar Soaked in Bee Vomit",
+                    detail:"Post-Charred Sugar Soaked in Bee Vomit",
                     cost:20,
                     stock: 3,
                 },
@@ -90,9 +90,27 @@ export default {
                 },
                 {
                     name:`Candle`,
-                    detail:"It's A Candle. Don't Overthink This.",
+                    detail:"It's A Candle. Don't Overthink This. ",
                     cost:1,
                     stock: 10,
+                },
+                {
+                    name:'Overthought Candle',
+                    detail:"A Thought A Day Keeps The Candles A Flame",
+                    cost:1,
+                    stock: 10,
+                },
+                {
+                    name:'Timber Log',
+                    detail:"Oi Don't Come At Me About The Prices. Natural Resources Are Expensive.",
+                    cost:50,
+                    stock: 3,
+                },
+                {
+                    name:':)',
+                    detail:":D",
+                    cost:1001,
+                    stock: 5,
                 },
             ],
             cart: 0,

@@ -35,7 +35,7 @@
                     <h2 class="cart-text cart-sub">You still have ${{budget}}</h2>
 
                     <div class="cart-btn row">
-                        <button :disabled="stockDefault <= 0" :class="{disabled: stockDefault <= 0}" class="btn-buy"  v-on:click="addToCart">Buy</button>
+                        <button :disabled="stockDefault <= 0" :class="{disabled: stockDefault <= 0}" class="btn-buy"  v-on:click="addToCart(), minusBudget()">Buy</button>
                     </div>  <!-- End of "cart-btn" -->
                 </div>
             </section>
@@ -122,8 +122,11 @@ export default {
             console.log("Original Stock:" + this.stockDefault)
             this.stockDefault = this.stockDefault - 1
             console.log ("New Stock:" + this.stockDefault)
-
-            
+        },
+        minusBudget () {
+            console.log("Original Budget:" + this.budget)
+            this.budget = this.budget - this.costDefault
+            console.log ("New Stock:" + this.budget)
         }
 
     }

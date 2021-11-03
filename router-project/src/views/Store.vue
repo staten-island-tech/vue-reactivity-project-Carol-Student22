@@ -96,7 +96,7 @@ export default {
                 },
             ],
             cart: 0,
-            budget:10,
+            budget:1000,
         } // End of return
     }, // End of data
 

@@ -35,7 +35,7 @@
                     <h2 class="cart-text cart-sub">You still have ${{budget}}</h2>
 
                     <div class="cart-btn row">
-                        <button :disabled="stockDefault <= 0" :class="{disabled: stockDefault <= 0}" class="btn-buy"  v-on:click="addToCart(), minusBudget()">Buy</button>
+                        <button :disabled="stockDefault <= 0 ||  budget <= 0 || budget < costDefault" :class="{disabled: stockDefault <= 0 ||  budget <= 0 || budget < costDefault }" class="btn-buy"  v-on:click="addToCart(), minusBudget()">Buy</button>
                     </div>  <!-- End of "cart-btn" -->
                 </div>
             </section>
@@ -96,7 +96,7 @@ export default {
                 },
             ],
             cart: 0,
-            budget:1000,
+            budget:10,
         } // End of return
     }, // End of data
 

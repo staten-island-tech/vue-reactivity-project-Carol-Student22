@@ -32,7 +32,7 @@
             <section class="user">
                 <div class="cart">
                     <h1 class="cart-text cart-main">You Bought {{cart}} Items</h1>
-                    <h2 class="cart-text cart-sub">You still have ${{budget}}</h2>
+                    <h2 class="cart-text cart-sub">You still have {{budget}} coins</h2>
 
                     <div class="cart-btn row">
                         <button :disabled="stockDefault <= 0 ||  budget <= 0 || budget < costDefault" :class="{disabled: stockDefault <= 0 ||  budget <= 0 || budget < costDefault }" class="btn-buy"  v-on:click="addToCart(), minusBudget()">Buy</button>
@@ -62,7 +62,7 @@ export default {
                     name:'Honey Soaked Caramel',
                     detail:"Post-Charred Sugar Soaked in Bee Vomit",
                     cost:20,
-                    stock: 3,
+                    stock: 5,
                 },
                 {
                     name:'Sugar Candy Piece',
@@ -74,7 +74,7 @@ export default {
                     name:'Pastry Disk',
                     detail:"A disk shaped pastry.",
                     cost:15,
-                    stock: 8,
+                    stock: 10,
                 },
                 {
                     name:'Tumble Weed Candy',
@@ -104,12 +104,12 @@ export default {
                     name:'Timber Log',
                     detail:"Oi Don't Come At Me About The Prices. Natural Resources Are Expensive.",
                     cost:50,
-                    stock: 3,
+                    stock: 5,
                 },
                 {
                     name:':)',
                     detail:":D",
-                    cost:1001,
+                    cost: 1001,
                     stock: 5,
                 },
             ],
